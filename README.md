@@ -1,2 +1,3 @@
-# scripts
-Library of scripts
+## 💾 Scripts
+
+Scripts library made for general use
