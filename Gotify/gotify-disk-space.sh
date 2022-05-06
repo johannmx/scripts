@@ -14,6 +14,12 @@ LOGGER_TITLE="disk-space-home"
 # Configuration file
 FILE_CONF="/etc/gotify-notify.conf"
 
+# Handling configuration file (if present)
+if [[ -f "${FILE_CONF}" ]]; then
+  GOTIFY_URL=$(grep "server-url=" $FILE_CONF | cut -d'=' -f2)
+  GOTIFY_TOKEN=$(grep "access-token=" $FILE_CONF | cut -d'=' -f2)
+fi
+
 # Server info
 server_name=$(uname -n)
 release=$(lsb_release -d | cut -d$'\t' -f2)
